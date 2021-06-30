@@ -65,6 +65,7 @@
 
       const firstUlDisappear = function () {
         let firstList=document.getElementById('firstList')
+        firstList.style.display='None'
       };
 
       /* EXERCISE 8
@@ -72,7 +73,10 @@
       */
 
       const paintItGreen = function () {
-        //
+        let everyList=document.getElementsByTagName('ul')
+        for(i=0;i<everyList.length;i++){
+          everyList[i].style.backgroundColor='green'
+        }
       };
 
       /* EXERCISE 9
@@ -80,7 +84,8 @@
       */
 
       const makeItClickable = function () {
-        //
+        let heading=document.getElementsByTagName('header')[0]
+        heading.style.color='yellow'
       };
 
       /* EXERCISE 10
@@ -88,7 +93,8 @@
       */
 
       const changeFooterText = function () {
-        //
+        let footerText=document.querySelector('footer>p')
+        footerText.innerText='I have just Changed the Footer Content'
       };
 
       /* EXERCISE 11
@@ -96,20 +102,24 @@
       */
 
       const inputField = document.getElementById("input-field");
-      // ...
+      inputField.addEventListener('input',function(){
+        console.log('inputField')
+      })
 
       /* EXERCISE 12
       Create a new welcome alert message when the page successfully loads.
       */
 
       window.onload = function () {
-        alert('page just finished loading!')
+        alert('Welcome!! My page has just finished loading!')
         changeTitle('New Title')
         addClassToTitle()
         changePcontent()
         changeUrls()
         addToTheSecond('4th Element')
         addParagraph('This is my secong paragraph')
+        firstUlDisappear()
+        paintItGreen()
       };
 
       /* EXERCISE 13
@@ -124,7 +134,7 @@
     </style>
   </head>
   <body>
-    <header>
+    <header onclick="makeItClickable(event)">
       <h1>This is the title of the page</h1>
       <h2>This is the subtitle of the page</h2>
     </header>
@@ -159,7 +169,7 @@
       </div>
     </main>
 
-    <footer>
+    <footer onclick="changeFooterText(event)">
       <p>And this text is just for the exercise too!</p>
     </footer>
   </body>
