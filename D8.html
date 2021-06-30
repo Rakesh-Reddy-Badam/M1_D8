@@ -6,7 +6,7 @@
       */
 
       const changeTitle = function (newTitle) {
-        //
+          document.title=newTitle
       };
 
       /* EXERCISE 2
@@ -14,7 +14,8 @@
       */
 
       const addClassToTitle = function () {
-        //
+          let myTitle=document.querySelector('h1')
+          myTitle.classList.add('myHeading')
       };
 
       /* EXERCISE 3
@@ -22,8 +23,8 @@
       */
 
       const changePcontent = function () {
-          let pContent=document.getElementByTagName('div p')
-          console.log(pContent)
+          let pContent=document.querySelector('div p')
+          pContent.innerText='I have changed the content'
       };
 
       /* EXERCISE 4
@@ -31,7 +32,9 @@
       */
 
       const changeUrls = function () {
-        //
+        let destinationLink=document.querySelector('a')
+        destinationLink.setAttribute('href','https://www.google.com')
+
       };
 
       /* EXERCISE 5
@@ -39,7 +42,10 @@
        */
 
       const addToTheSecond = function (content) {
-        //
+        let secondList=document.getElementById('secondList')
+        let addingNewElement=document.createElement('li')
+        addingNewElement.innerText=content
+        secondList.appendChild(addingNewElement) 
       };
 
       /* EXERCISE 6
@@ -47,7 +53,10 @@
       */
 
       const addParagraph = function (content) {
-        //
+        let addingNewParah=document.createElement('p')
+        addingNewParah.innerText=content
+        let secondParah=document.getElementsByTagName('div')[0]
+        secondParah.appendChild(addingNewParah)
       };
 
       /* EXERCISE 7
@@ -55,7 +64,7 @@
       */
 
       const firstUlDisappear = function () {
-        //
+        let firstList=document.getElementById('firstList')
       };
 
       /* EXERCISE 8
@@ -94,7 +103,13 @@
       */
 
       window.onload = function () {
+        alert('page just finished loading!')
+        changeTitle('New Title')
+        addClassToTitle()
         changePcontent()
+        changeUrls()
+        addToTheSecond('4th Element')
+        addParagraph('This is my secong paragraph')
       };
 
       /* EXERCISE 13
